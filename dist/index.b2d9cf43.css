@@ -1,0 +1,139 @@
+:root {
+  --cell-size: 120px;
+  --mark-size: calc(var(--cell-size) * .9);
+}
+
+.container {
+  width: 100vw;
+  width: 660px;
+  text-align: center;
+  background-color: #1e45f6;
+  outline: 5px solid #fe9a02;
+  flex-direction: row;
+  margin: 200px auto auto;
+  padding: 10px;
+  display: flex;
+}
+
+#display {
+  font-size: 2rem;
+}
+
+.display-box {
+  height: 70px;
+  width: 200px;
+  background-color: gray;
+  border-radius: 10px;
+  outline: 1px solid #000;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+#padDisplay {
+  grid-template-columns: repeat(3, auto);
+  justify-content: left;
+  display: grid;
+}
+
+.drum-pad {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: gray;
+  border: 10px solid #1e45f6;
+  border-radius: 20%;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  font-size: 2rem;
+  display: flex;
+}
+
+.pad-color {
+  background-color: #fe9a02;
+}
+
+#control-panel {
+  width: 900px;
+  column-gap: 30px 30px;
+  flex-direction: column;
+  align-items: center;
+  font-family: cursive;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+#control-panel .switch {
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+  position: relative;
+}
+
+#control-panel .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#control-panel .slider {
+  cursor: pointer;
+  background-color: #ccc;
+  transition: all .4s;
+  position: absolute;
+  inset: 0;
+}
+
+#control-panel .slider:before {
+  content: "";
+  height: 26px;
+  width: 26px;
+  background-color: #fff;
+  transition: all .4s;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+}
+
+#control-panel input:checked + .slider {
+  background-color: #fe9a02;
+}
+
+#control-panel input:focus + .slider {
+  box-shadow: 0 0 1px #fe9a02;
+}
+
+#control-panel input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#control-panel .slider.round {
+  border-radius: 34px;
+}
+
+#control-panel .slider.round:before {
+  border-radius: 50%;
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    width: 100vw;
+    transform: scale(.8);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    width: 100vw;
+    transform: scale(.5);
+  }
+}
+
+/*# sourceMappingURL=index.b2d9cf43.css.map */
